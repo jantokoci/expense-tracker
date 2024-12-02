@@ -1,0 +1,86 @@
+const [show, setShow] = useState(false)
+const handleClose = () => setShow(false)
+setShow(true)
+
+let debtMoney = 0;
+const [debts, setDebts] = useState([])
+function handleAddDebt() {
+    const newDebt = document.getElementById("givdebt").value
+    document.getElementById("givdebt").value = ""
+
+    setDebts(d => [...d, newDebt])
+}
+                       
+            
+            <div>
+                <label>Debt/Loan</label><br />
+                <input id="givdebt" type="text" placeholder="Add a Debt (not the amount)"/>
+                <button onClick={handleAddDebt}>Add</button><br />
+                {debts.map((debt, index) => <><input type="checkbox" key={index}/><label>{debt}</label><br /></>)}
+                <input type="checkbox" /><label>Trevor 3000HUF</label>
+            </div>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton />
+                <Modal.Body>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Label>Amount of Debt</Form.Label>
+                            <Form.Control type="number" placeholder="Number" autoFocus id="debtAmount" />
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+            </Modal>
+
+------------------------------------------------------------------------------------------------------------------------------------DEBT
+<div>
+    <label>Goals</label><br />
+    <input id="givgoal" type="text" placeholder="Type the Goal name"/>
+    <input id="givgoalval" type="number" placeholder="Type the Goal value"/>
+    <button onClick={handleAddGoal}>Add</button><br />
+    
+    
+    
+    <label>How much do you want to add to your Goal</label><br />
+    <select>
+        <option value="100">100</option>
+        <option value="1000">1000</option>
+        <option value="10000">10000</option>
+        <option value="100000">100000</option>
+        <option value="1000000">1000000</option>
+    </select>
+    
+    <div>
+        <ul>
+            {goals.map((goal, index) => <li key={goal.index}>{goal}</li>)}{goalVals.map((goalVal, index) => <div><p key={goalVal.index}>{goalVal}{currency}<button>Add Money</button></p></div>)}
+        </ul>
+    </div>
+</div>
+
+
+
+//goals add
+const [goals, setGoals] = useState([])
+const [goalVals, setGoalVals] = useState([])
+
+function handleAddGoal() {
+const newGoal = document.getElementById("givgoal").value
+document.getElementById("givgoal").value = ""
+setGoals(g => [...g, newGoal])
+
+const newGoalVal = document.getElementById("givgoalval").valueAsNumber
+document.getElementById("givgoalval").value = ""
+setGoalVals(goalVals => [...goalVals, newGoalVal])
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------GOAL
+
+<select id="category">
+    <option value="House">Rent/Bill</option>
+    <option value="Eat">Food/Utilites</option>
+    <option value="Med">Medication</option>
+    <option value="Doin">Activites/Fun</option>
+</select>
+
+------------------------------------------------------------------------------------------------------------------------------------CATEGORY

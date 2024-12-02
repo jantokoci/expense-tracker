@@ -1,0 +1,23 @@
+EXPENSE TRACKER -- (real time) after the base
+
+
+functions:
+- Havi jövedelmet meglehet adni az aktuális hónapban
+- Fő kategóriák: Rent/Bills, Food/Utilities, Fun, Medication, Debt?
+- Kiszámolja az összes költekezésed, a megspórolt pénzt a hónapban 
+- Célok kitűzése, mennyi pénzt tudtál rá félretenni
+- Tartozások trekkelése
+- Plusz bevétel hozzáadása
+- Currency change
+
+felépítés:
+- lets get started oldal(gyakorolni a ROUTINGOT)
+- header - cím, logo
+- megadod az aktuális bevételed - mellette currency change
+- fő kategoriákra való költés
+- összegzés megmaradt MONEEEYYY
+- bal oldalon tartozások (check list)
+- jobb oldalon célkitűzés hozzáadása 
+	+ spórolt összeg hozzáadása az adott célhoz
+
+
