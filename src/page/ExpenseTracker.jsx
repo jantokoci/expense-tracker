@@ -55,14 +55,16 @@ function ExpenseTracker() {
 
 
     //currency changer function
-    const [currency, setCurrency] = useState('HUF')
+    const [currency, setCurrency] = useState(forint)
+    var forint = 'HUF'
+    var euro = 'EUR'
     function handleCurrencyChange(event){
         setCurrency(event.target.value)
 
-        if (event.target.value === 'EUR'){
+        if (event.target.value === euro){
             setMoney(baseMoney => money / 415)
         }
-        if (event.target.value === 'HUF'){
+        if (event.target.value === forint){
             setMoney(baseMoney => money * 415)
         }
     }
@@ -101,8 +103,8 @@ function ExpenseTracker() {
             <div>
                 <p className="text">Transactions</p>
                 {trans ? <ul>
-                    {listItems.map((listItem, index) => <li className="minusli" key={index}>-{Math.round(listItem * 100) /100}HUF<button className="btn2" onClick={() => removeActionPay(index)}>Remove</button></li>)}
-                    {addListItems.map((addListItem, index) => <li  className="addli" key={index}>+{Math.round(addListItem * 100) / 100}HUF<button className="btn2" onClick={() => removeActionBalance(index)}>Remove</button></li>)}
+                    {listItems.map((listItem, index) => <li className="minusli" key={index}>-{Math.round(listItem * 100) /100}<button className="btn2" onClick={() => removeActionPay(index)}>Remove</button></li>)}
+                    {addListItems.map((addListItem, index) => <li  className="addli" key={index}>+{Math.round(addListItem * 100) / 100}<button className="btn2" onClick={() => removeActionBalance(index)}>Remove</button></li>)}
                 </ul> : <p className="error-funct">You dont have any transaction</p>}
             </div>
 
